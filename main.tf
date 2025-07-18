@@ -18,8 +18,8 @@ resource "aws_security_group" "allow_custom_port" {
 }
 
 resource "aws_instance" "ubuntu_server" {
-  ami           = var.ami_id
-  instance_type = "t2.micro"
+  ami             = var.ami_id
+  instance_type   = "t2.micro"
   security_groups = [aws_security_group.allow_custom_port.name]
 
   tags = {
